@@ -12,6 +12,9 @@ soup = BeautifulSoup(reqs.text, 'html.parser')
 urls = []
 
 while(True):
-    for link in soup.find_all('a'):
-        # print(link.get('href'))
-        requests.get(url,headers=headers)
+    try:
+        for link in soup.find_all('a'):
+                # print(link.get('href'))
+            requests.get(url,headers=headers)
+    except:
+        continue
